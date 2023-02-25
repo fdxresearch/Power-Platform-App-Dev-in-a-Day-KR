@@ -320,6 +320,18 @@ Atlassian에 접속하기 위한 email 주소와 API 토큰을 발급 받았습�
         -g $resgrp \
         -n $fncapp \
         --settings Atlassian__InstanceName=$ATLASSIAN_INSTANCE_NAME
+
+
+
+    ATLASSIAN_INSTANCE_NAME="gppb16357"
+    AZURE_ENV_NAME="gppb16357"
+    resgrp="rg-$AZURE_ENV_NAME"
+    fncapp="fncapp-$AZURE_ENV_NAME-basic-auth"
+
+    az functionapp config appsettings set \
+        -g $resgrp \
+        -n $fncapp \
+        --settings Atlassian__InstanceName=$ATLASSIAN_INSTANCE_NAME
     ```
 
 [애저 펑션][az fncapp]을 이용한 Basic 인증용 API 앱 배포가 끝났습니다.
